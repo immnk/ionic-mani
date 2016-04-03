@@ -1,4 +1,4 @@
-angular.module(ELA.MODULE_NAMES.LOGGER).factory(ELA.FACTORIES.Logger, Logger);
+angular.module(MANI.MODULE_NAMES.LOGGER).factory(MANI.FACTORIES.Logger, Logger);
 
 	Logger.$inject = ['$log'];
 

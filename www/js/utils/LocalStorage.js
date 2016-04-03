@@ -1,4 +1,4 @@
-angular.module(ELA.MODULE_NAMES.LOCAL_STORAGE).factory(ELA.FACTORIES.LocalStorage, LocalStorage);
+angular.module(MANI.MODULE_NAMES.LOCAL_STORAGE).factory(MANI.FACTORIES.LocalStorage, LocalStorage);
 
 LocalStorage.$inject = [];
 

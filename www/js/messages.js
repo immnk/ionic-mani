@@ -1,4 +1,4 @@
-messages.constant(ELA.MESSAGES, {
+messages.constant(MANI.MESSAGES, {
 	SUCCESS_TITLE: "Success",
 	ERROR_TITLE : "Something went wrong",
     NETWORK_ERROR: "A network error has occurred. Please try again",

@@ -1,55 +1,55 @@
-var ELA = {
-    APP_NAME: "ela",
-    MESSAGES : "ELA_MESSAGES",
+var MANI = {
+    APP_NAME: "mani",
+    MESSAGES : "MANI_MESSAGES",
     MODULE_NAMES: {
-        CONTROLLERS: "ela.controllers",
-        FACTORIES: "ela.factories",
-        DIRECTIVES : "ela.directives",
-        UTILS: "ela.utils",
-        MESSAGES : "ela.messages",
+        CONTROLLERS: "mani.controllers",
+        FACTORIES: "mani.factories",
+        DIRECTIVES : "mani.directives",
+        UTILS: "mani.utils",
+        MESSAGES : "mani.messages",
         LOGGER : "Logger",
         LOCAL_STORAGE : "LocalStorage"
     },
     CONTROLLERS : {
-        MainController : "MainController",
-        EmployeeDetailController : "EmployeeDetailController",
-        LoginController : "LoginController",
+        DashboardController : "DashboardController",
+        ProjectsController : "ProjectsController",
+        ProjectController : "ProjectController",
         SideMenuController : "SideMenuController"
     },
     FACTORIES :  {
-        MainFactory : "MainFactory",
-        EmployeeDetailFactory : "EmployeeDetailFactory",
-        LoginFactory: "LoginFactory",
+        ProjectsFactory: "ProjectsFactory",
         Logger : "Logger",
         LocalStorage : "LocalStorage"
     },
     STATES: {
         SIDE_MENU: {
+            name: 'app',
+            url: '/app',
+            templateUrl: 'templates/menu.html',
             controller: 'SideMenuController',
-            factory: 'SideMenuFactory'
-        },
-        MAIN: {
-            name: 'main',
-            url: '/main',
-            templateUrl: 'templates/pages/main.html',
-            controller: 'MainController',
-            factory: 'MainFactory',
+            factory: 'SideMenuFactory',
             cache: true
         },
-        EMPLOYEE_DETAIL: {
-            name: 'employeeDetail',
-            url: '/employeeDetail:eid',
-            templateUrl: 'templates/pages/employeeDetail.html',
-            controller: 'EmployeeDetailController',
-            factory: 'EmployeeDetailFactory',
+        DASHBOARD: {
+            name: 'app.dashboard',
+            url: '/dashboard',
+            templateUrl: 'templates/dashboard.html',
+            controller: 'DashboardController',
             cache: false
         },
-        LOGIN: {
-            name: 'login',
-            url: '/login',
-            templateUrl: 'templates/pages/login.html',
-            controller: 'LoginController',
-            factory: 'LoginFactory',
+        PROJECTS: {
+            name: 'app.projects',
+            url: '/projects',
+            templateUrl: 'templates/projects.html',
+            controller: 'ProjectsController',
+            factory: 'ProjectsFactory',
+            cache: true
+        },
+        PROJECTDETAIL: {
+            name: 'app.projectdetail',
+            url: '/projects/:projectId',
+            templateUrl: 'templates/project.html',
+            controller: 'ProjectController',
             cache: false
         }
     },
@@ -78,10 +78,6 @@ var ELA = {
             UNAUTHORIZED : "UNAUTHORIZED"
         }
     },
-    USER_PERMISSIONS : {
-        READ : "r",
-        WRITE : "w"
-    },
     LOCAL_STORAGE : {
         KEYS : {
             USER : "USER",
@@ -89,10 +85,10 @@ var ELA = {
     }
 };
 
-var controllers = angular.module(ELA.MODULE_NAMES.CONTROLLERS, []);
-var factories = angular.module(ELA.MODULE_NAMES.FACTORIES, []);
-var directives = angular.module(ELA.MODULE_NAMES.DIRECTIVES, []);
-var utils = angular.module(ELA.MODULE_NAMES.UTILS, [ELA.MODULE_NAMES.LOGGER, ELA.MODULE_NAMES.LOCAL_STORAGE]);
-var messages = angular.module(ELA.MODULE_NAMES.MESSAGES, []);
-var logger = angular.module(ELA.MODULE_NAMES.LOGGER, []);
-var localStorage = angular.module(ELA.MODULE_NAMES.LOCAL_STORAGE, []);
+var controllers = angular.module(MANI.MODULE_NAMES.CONTROLLERS, []);
+var factories = angular.module(MANI.MODULE_NAMES.FACTORIES, []);
+var directives = angular.module(MANI.MODULE_NAMES.DIRECTIVES, []);
+var utils = angular.module(MANI.MODULE_NAMES.UTILS, [MANI.MODULE_NAMES.LOGGER, MANI.MODULE_NAMES.LOCAL_STORAGE]);
+var messages = angular.module(MANI.MODULE_NAMES.MESSAGES, []);
+var logger = angular.module(MANI.MODULE_NAMES.LOGGER, []);
+var localStorage = angular.module(MANI.MODULE_NAMES.LOCAL_STORAGE, []);

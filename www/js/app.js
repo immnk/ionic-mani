@@ -1,74 +1,60 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','ionic.service.core', 'ionic.service.analytics', 'starter.controllers'])
+angular.module(MANI.APP_NAME, ['ionic', 'ionic.service.core', 'ionic.service.analytics', MANI.MODULE_NAMES.CONTROLLERS, MANI.MODULE_NAMES.FACTORIES, MANI.MODULE_NAMES.UTILS, MANI.MODULE_NAMES.DIRECTIVES, MANI.MODULE_NAMES.MESSAGES])
 
 .run(function($ionicPlatform, $ionicAnalytics) {
-  $ionicPlatform.ready(function() {
-    $ionicAnalytics.register();
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
-
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
+    $ionicPlatform.ready(function() {
+        $ionicAnalytics.register();
+        if (window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+            cordova.plugins.Keyboard.disableScroll(true);
+        }
+        if (window.StatusBar) {
+            // org.apache.cordova.statusbar required
+            StatusBar.styleDefault();
+        }
+    });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
+.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', '$logProvider',
+    function($stateProvider, $urlRouterProvider, $compileProvider, $logProvider) {
 
-    .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
-  })
+        $stateProvider
+            .state(MANI.STATES.SIDE_MENU.name, {
+                url: MANI.STATES.SIDE_MENU.url,
+                abstract: true,
+                templateUrl: MANI.STATES.SIDE_MENU.templateUrl,
+                controller: MANI.STATES.SIDE_MENU.controller,
+                cache: MANI.STATES.SIDE_MENU.cache
+            })
+            .state(MANI.STATES.DASHBOARD.name, {
+                url: MANI.STATES.DASHBOARD.url,
+                views: {
+                    'menuContent': {
+                        templateUrl: MANI.STATES.DASHBOARD.templateUrl,
+                        controller: MANI.STATES.DASHBOARD.controller
+                    }
+                }
+            })
+            .state(MANI.STATES.PROJECTS.name, {
+                url: MANI.STATES.PROJECTS.url,
+                views: {
+                    'menuContent': {
+                        templateUrl: MANI.STATES.PROJECTS.templateUrl,
+                        controller: MANI.STATES.PROJECTS.controller
+                    }
+                }
+            })
+            .state(MANI.STATES.PROJECTDETAIL.name, {
+                url: MANI.STATES.PROJECTDETAIL.url,
+                views: {
+                    'menuContent': {
+                        templateUrl: MANI.STATES.PROJECTDETAIL.templateUrl,
+                        controller: MANI.STATES.PROJECTDETAIL.controller
+                    }
+                }
+            });
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
+        $urlRouterProvider.otherwise("#" + MANI.STATES.SIDE_MENU.url + MANI.STATES.DASHBOARD.url);
+        $compileProvider.debugInfoEnabled(false);
+        $logProvider.debugEnabled(true);
     }
-  })
-
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
-});
+]);
