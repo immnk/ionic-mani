@@ -14,7 +14,9 @@ var MANI = {
         DashboardController : "DashboardController",
         ProjectsController : "ProjectsController",
         ProjectController : "ProjectController",
-        SideMenuController : "SideMenuController"
+        SideMenuController : "SideMenuController",
+        AboutMeController: "AboutMeController",
+        ContactMeController: "ContactMeController"
     },
     FACTORIES :  {
         ProjectsFactory: "ProjectsFactory",
@@ -51,6 +53,20 @@ var MANI = {
             templateUrl: 'templates/project.html',
             controller: 'ProjectController',
             cache: false
+        },
+        ABOUTME: {
+            name: 'app.aboutme',
+            url: '/aboutme',
+            templateUrl: 'templates/aboutme.html',
+            controller: 'AboutMeController',
+            cache: true
+        },
+        CONTACTME: {
+            name: 'app.contactme',
+            url: '/contactme',
+            templateUrl: 'templates/contactme.html',
+            controller: 'ContactMeController',
+            cache: true
         }
     },
     BACK_END: {

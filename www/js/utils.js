@@ -10,11 +10,11 @@ function Core() {
 
     Factory.$inject = ['$q', '$http', '$rootScope', '$ionicPopup', '$ionicLoading', '$ionicHistory', '$ionicSideMenuDelegate', 'Logger', 'LocalStorage', MANI.MESSAGES];
 
-    function Factory($q, $http, $rootScope, $ionicPopup, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, Logger, LocalStorage, ELA_MESSAGES) {
+    function Factory($q, $http, $rootScope, $ionicPopup, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, Logger, LocalStorage, MANI_MESSAGES) {
         var service = {};
 
         service.Logger = Logger;
-        service.ELA_MESSAGES = ELA_MESSAGES;
+        service.MANI_MESSAGES = MANI_MESSAGES;
 
         service.init = init;
         service.localStorage = LocalStorage;
@@ -25,7 +25,7 @@ function Core() {
         service.handleError = handleError;
         service.encode = encode;
         service.formatDate = formatDate;
-
+        service.getLocalData = getLocalData;
 
         function init() {
             Logger.debug("utils - init: start");
@@ -39,7 +39,7 @@ function Core() {
             }
             $ionicSideMenuDelegate.canDragContent(false);
 
-            $rootScope.ELA_MESSAGES = ELA_MESSAGES
+            $rootScope.MANI_MESSAGES = MANI_MESSAGES
             globalRootScope = $rootScope;
             Logger.debug("utils - init: end");
         }
@@ -74,14 +74,14 @@ function Core() {
 
             var req = {
                 method: requestType,
-                url: ELA.BACK_END.RootURL + methodName,
+                url: MANI.BACK_END.RootURL + methodName,
                 headers: headers
             };
 
             if (requestData) {
-                if (requestType == ELA.BACK_END.RequestType.GET) {
+                if (requestType == MANI.BACK_END.RequestType.GET) {
                     req.params = requestData;
-                } else if (requestType == ELA.BACK_END.RequestType.POST) {
+                } else if (requestType == MANI.BACK_END.RequestType.POST) {
                     req.data = requestData;
                 }
             }
@@ -109,10 +109,10 @@ function Core() {
                 };
                 
                 if (error.status == 401) {
-                    errorResponse.error.code = ELA.BACK_END.ERROR_CODES.UNAUTHORIZED;
+                    errorResponse.error.code = MANI.BACK_END.ERROR_CODES.UNAUTHORIZED;
                 }
                 else {
-                    errorResponse.error.code = ELA.BACK_END.ERROR_CODES.NETWORK_ERROR;
+                    errorResponse.error.code = MANI.BACK_END.ERROR_CODES.NETWORK_ERROR;
                 }
                
                 deferred.reject(errorResponse);
@@ -128,11 +128,11 @@ function Core() {
             service.Logger.debug("$utils.handleError : start");
 
             try {
-                var message = service.ELA_MESSAGES[error.error.code];
-                message = service.ELA_MESSAGES[error.error.code];
+                var message = service.MANI_MESSAGES[error.error.code];
+                message = service.MANI_MESSAGES[error.error.code];
                 return message;
             } catch (e) {
-                return service.ELA_MESSAGES.NETWORK_ERROR;
+                return service.MANI_MESSAGES.NETWORK_ERROR;
             }
 
             service.Logger.debug("$utils.handleError : end");
@@ -179,6 +179,22 @@ function Core() {
             returnValue = date.substr(0, date.indexOf(":") - 3);
 
             return returnValue;
+        }
+
+        function getLocalData(fileName) {
+            Logger.debug("utils - getLocalData: start");
+            var deferred = $q.defer();
+            
+            $http.get(fileName).then(function(response){
+                console.log(response);
+                deferred.resolve(response);
+            }, function(error){
+                deferred.reject(error);
+            });
+
+            Logger.debug("utils - getLocalData: end");
+
+            return deferred.promise;
         }
 
         return service;

@@ -1,6 +1,6 @@
 factories.factory(MANI.FACTORIES.ProjectsFactory, ProjectsFactory);
 
-ProjectsFactory.$inject = ['$q', 'utils']
+ProjectsFactory.$inject = ['$q', 'utils'];
 
 function ProjectsFactory($q, utils) {
 
@@ -17,7 +17,12 @@ function ProjectsFactory($q, utils) {
             deferred.resolve(service.projects);
         } else{
             //get all the projects from backend here...
-            deferred.resolve([]);
+            utils.getLocalData('../assets/projects.json').then(function(data){
+                console.log(data);
+                deferred.resolve(data.data.projects);
+            }, function(error){
+                deferred.reject(error);
+            });
         }
 
         return deferred.promise;

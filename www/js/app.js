@@ -51,9 +51,27 @@ angular.module(MANI.APP_NAME, ['ionic', 'ionic.service.core', 'ionic.service.ana
                         controller: MANI.STATES.PROJECTDETAIL.controller
                     }
                 }
+            })
+            .state(MANI.STATES.ABOUTME.name, {
+                url: MANI.STATES.ABOUTME.url,
+                views: {
+                    'menuContent': {
+                        templateUrl: MANI.STATES.ABOUTME.templateUrl,
+                        controller: MANI.STATES.ABOUTME.controller
+                    }
+                }
+            })
+            .state(MANI.STATES.CONTACTME.name, {
+                url: MANI.STATES.CONTACTME.url,
+                views: {
+                    'menuContent': {
+                        templateUrl: MANI.STATES.CONTACTME.templateUrl,
+                        controller: MANI.STATES.CONTACTME.controller
+                    }
+                }
             });
 
-        $urlRouterProvider.otherwise("#" + MANI.STATES.SIDE_MENU.url + MANI.STATES.DASHBOARD.url);
+        $urlRouterProvider.otherwise(MANI.STATES.SIDE_MENU.url + MANI.STATES.DASHBOARD.url);
         $compileProvider.debugInfoEnabled(false);
         $logProvider.debugEnabled(true);
     }

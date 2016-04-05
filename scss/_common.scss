@@ -1,0 +1,61 @@
+$theme-color: #18bc9c;
+$theme-border-color: #676767;
+$transparent-background: rgba(255, 255, 255, 0);
+$transparent-black-background: rgba(0, 0, 0, 0.3);
+
+$font-color-white: #FFF;
+$font-color-black: #5e5e5e;
+$font-theme-color: #006551;
+$font-family: "Lato";
+$font-montserrat: "Montserrat", sans-serif;
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../assets/fonts/Montserrat-Regular.otf);
+}
+@font-face {
+    font-family: Lato;
+    src: url(../assets/fonts/Lato-Regular.ttf);
+}
+@font-face {
+	font-family: Lato;
+	src: url(../assets/fonts/Lato-Light.ttf);
+	font-weight: 300;
+}
+@font-face{
+	font-family: Lato;
+	src: url(../assets/fonts/Lato-Bold.ttf);
+	font-weight: 700;
+}
+@font-face{
+	font-family: Lato;
+	src: url(../assets/fonts/Lato-Black.ttf);
+	font-weight: 900;
+}
+@font-face{
+	font-family: Lato;
+	src: url(../assets/fonts/Lato-LightItalic.ttf);
+	font-weight: 300;
+	font-style: italic;
+}
+
+body {
+    font-family: $font-family, sans-serif;
+    font-color: $font-color-black;
+    input,
+    input::-webkit-placeholder,
+    textarea {
+        font-family: $font-family, sans-serif;
+        font-weight: normal;
+    }
+}
+
+ion-header-bar {
+    background: $theme-color !important;
+    .button{
+        color: $font-color-white !important;
+    }
+    .title{
+        color: $font-color-white !important;
+    }
+}

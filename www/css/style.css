@@ -1,1 +1,78 @@
-/* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: Montserrat;
+  src: url(../assets/fonts/Montserrat-Regular.otf); }
+@font-face {
+  font-family: Lato;
+  src: url(../assets/fonts/Lato-Regular.ttf); }
+@font-face {
+  font-family: Lato;
+  src: url(../assets/fonts/Lato-Light.ttf);
+  font-weight: 300; }
+@font-face {
+  font-family: Lato;
+  src: url(../assets/fonts/Lato-Bold.ttf);
+  font-weight: 700; }
+@font-face {
+  font-family: Lato;
+  src: url(../assets/fonts/Lato-Black.ttf);
+  font-weight: 900; }
+@font-face {
+  font-family: Lato;
+  src: url(../assets/fonts/Lato-LightItalic.ttf);
+  font-weight: 300;
+  font-style: italic; }
+body {
+  font-family: "Lato", sans-serif;
+  font-color: #5e5e5e; }
+  body input,
+  body input::-webkit-placeholder,
+  body textarea {
+    font-family: "Lato", sans-serif;
+    font-weight: normal; }
+
+ion-header-bar {
+  background: #18bc9c !important; }
+  ion-header-bar .button {
+    color: #FFF !important; }
+  ion-header-bar .title {
+    color: #FFF !important; }
+
+ion-side-menu {
+  background: rgba(179, 255, 171, 0.5);
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, rgba(179, 255, 171, 0.5), rgba(18, 255, 247, 0.5)), url("../img/pentagon.png");
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, rgba(179, 255, 171, 0.5), rgba(18, 255, 247, 0.5)), url("../img/pentagon.png");
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-position: center center; }
+  ion-side-menu .avatar {
+    background: #444 url("../img/user_avatar.png");
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    border: 1px solid #676767;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 8px 6px -6px #676767;
+    -moz-box-shadow: 0 8px 6px -6px #676767;
+    box-shadow: 0 8px 6px -6px #676767; }
+  ion-side-menu .menu-list .list {
+    margin-top: 20px; }
+  ion-side-menu .menu-list .item {
+    background-color: rgba(255, 255, 255, 0);
+    border: #676767;
+    border-bottom-color: #006551; }
+    ion-side-menu .menu-list .item .item-content {
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 15px;
+      font-family: "Montserrat", sans-serif;
+      color: #006551; }
+      ion-side-menu .menu-list .item .item-content i {
+        padding-right: 10px;
+        font-size: 1.5em;
+        color: #006551; }
+      ion-side-menu .menu-list .item .item-content:active {
+        background-color: rgba(0, 0, 0, 0.3); }
+
+/*# sourceMappingURL=style.css.map */

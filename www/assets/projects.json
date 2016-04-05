@@ -1,0 +1,88 @@
+{
+  "projects": [
+    {
+      "projectUrl": "http://immnk.github.io/codaglobal", 
+      "techStack": [
+        "Angular JS", 
+        "Bootstrap", 
+        "CSS3", 
+        "Node JS", 
+        "Express JS"
+      ], 
+      "durationType": "month", 
+      "description": "Full stack development using Node JS and Angular JS with bootstrap", 
+      "title": "Course Listing software", 
+      "duration": 1, 
+      "id": 1
+    }, 
+    {
+      "projectUrl": "https://github.com/immnk/angular-datatable", 
+      "techStack": [
+        "Angular JS", 
+        "HTML5", 
+        "CSS3"
+      ], 
+      "durationType": "month", 
+      "description": "Responsible for space and data management into an angular data grid.", 
+      "title": "Data management front end for a private firm", 
+      "duration": 1, 
+      "id": 2
+    }, 
+    {
+      "projectUrl": "http://github.com/immnk", 
+      "techStack": [
+        "Angular JS", 
+        "Bootstrap", 
+        "HTML5", 
+        "CSS3", 
+        "Node JS", 
+        "Express JS", 
+        "MySQL", 
+        "Browser-Sync"
+      ], 
+      "durationType": "month", 
+      "description": "Responsible for frontend using Angular JS and backend using node JS", 
+      "title": "Inventory management", 
+      "duration": 2, 
+      "id": 3
+    }, 
+    {
+      "projectUrl": "http://github.com/immnk", 
+      "techStack": [
+        "Java", 
+        "SOAP", 
+        "DB2"
+      ], 
+      "durationType": "month", 
+      "description": "Responsible for backend rest services, Developer in Java", 
+      "title": "Asset management system", 
+      "duration": 2, 
+      "id": 4
+    }, 
+    {
+      "projectUrl": "http://github.com/immnk", 
+      "techStack": [
+        "Java", 
+        "Mining Algorithms"
+      ], 
+      "durationType": "month", 
+      "description": "Responsible for implementing the backend algorithms in Java", 
+      "title": "Prism mining based component classification and selection", 
+      "duration": 6, 
+      "id": 5
+    }, 
+    {
+      "projectUrl": "https://www.microsoft.com/en-us/store/search/apps?q=CreatusLabs", 
+      "techStack": [
+        "C#", 
+        "Windows Phone 8.1", 
+        "XAML"
+      ], 
+      "durationType": "year", 
+      "description": "Sole developer through entire project lifecycle", 
+      "title": "Multiple windows phone apps in market under Creatus Labs publisher", 
+      "duration": 2, 
+      "id": 6
+    }
+  ]
+}

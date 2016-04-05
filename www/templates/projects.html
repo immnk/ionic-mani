@@ -1,5 +1,9 @@
 <ion-view view-title="Projects">
   <ion-content>
-    Projects
+    <ion-list>
+    	<ion-item ng-repeat="project in projects">
+    		{{project.title}}
+    	</ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
