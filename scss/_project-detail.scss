@@ -1,0 +1,47 @@
+.project-detail {
+    @extend .outer-wrapper;
+    .content {
+        overflow: auto;
+        padding: 10px;
+        .project-icon {
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            i {
+                font-size: 48px;
+            }
+        }
+        .project-name {
+            font-size: 24px;
+            text-align: center;
+            font-family: $font-montserrat;
+            a {
+                display: block;
+                color: $theme-color;
+                padding: 10px;
+                border: 1px solid $theme-border-color;
+                background: $transparent-black-background;
+            }
+        }
+        .project-description {
+            margin: 10px auto;
+        }
+        .project-duration {
+            padding: 10px 0;
+        }
+        .project-stack {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .tech {
+                -webkit-box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.75);
+                box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.75);
+                background: $transparent-black-background;
+                border: 1px solid $theme-border-color;
+                padding: 10px;
+                margin: 5px;
+            }
+        }
+    }
+}

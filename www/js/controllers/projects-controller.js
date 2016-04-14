@@ -1,8 +1,8 @@
 controllers.controller(MANI.CONTROLLERS.ProjectsController, ProjectsController);
 
-ProjectsController.inject = ['$scope', MANI.FACTORIES.ProjectsFactory];
+ProjectsController.inject = ['$scope', '$state', MANI.FACTORIES.ProjectsFactory];
 
-function ProjectsController($scope, ProjectsFactory){
+function ProjectsController($scope, $state, ProjectsFactory){
 	
 	init();
 
@@ -11,7 +11,7 @@ function ProjectsController($scope, ProjectsFactory){
 			console.log(data);
 			$scope.projects = data;
 		}, function(error){
-			console.err(error);
+			console.error(error);
 			$scope.projects = [];
 		});
 	}

@@ -42,7 +42,7 @@ var MANI = {
         PROJECTS: {
             name: 'app.projects',
             url: '/projects',
-            templateUrl: 'templates/projects.html',
+            templateUrl: 'templates/project-list.html',
             controller: 'ProjectsController',
             factory: 'ProjectsFactory',
             cache: true
@@ -70,6 +70,7 @@ var MANI = {
         }
     },
     BACK_END: {
+        LocalService: "file:///android_asset/www/",
         RootURL: "http://satwebdev2.siriuscom.com/ela/mobiledev/rest.php?methodName=",
         IMAGEURL: "http://satwebdev2.siriuscom.com/ela/mobiledev/imageprovider.php?methodName=getUserAvatar&eid=",
         MethodName: {

@@ -1,0 +1,15 @@
+<ion-view view-title="Projects">
+    <ion-content>
+        <div class="projects">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="project-list">
+                    <div ng-repeat="project in projects" ui-sref="app.projectdetail({projectId:project.id})" class="project">
+                        <div class="project-icon"><i class="{{project.icon}}"></i></div>
+                        <div class="title">{{project.title}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

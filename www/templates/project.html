@@ -1,5 +1,25 @@
-<ion-view view-title="Project">
-  <ion-content>
-    Project 1
-  </ion-content>
+<ion-view>
+    <ion-nav-title>
+        {{project.title}}
+    </ion-nav-title>
+    <ion-content>
+        <div class="project-detail">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="project-icon">
+                    <i class="{{project.icon}}"></i>
+                </div>
+                <div class="project-name">
+                    <a ng-href="{{ project.projectUrl }}" alt="{{project.title}}">{{project.title}}</a>
+                </div>
+                <div class="project-description">{{project.description}}</div>
+                <div class="project-duration">
+                    {{ project.duration }}, {{project.durationType}}(s)
+                </div>
+                <div class="project-stack">
+                    <div class="tech" ng-repeat="stack in project.techStack">{{stack}}</div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>
