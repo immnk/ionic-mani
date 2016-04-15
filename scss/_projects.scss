@@ -11,7 +11,7 @@
             justify-content: center;
             margin: 5px;
             .project {
-                width: $theme-card-width - 20px;
+                width: 40%;
                 height: $theme-card-height - 20px;
                 border: none;
                 background: $general;
@@ -42,11 +42,12 @@
                     left: 0;
                     right: 0;
                     padding: 0 10px;
-                    font-family: $font-montserrat;
+                    // font-family: $font-montserrat;
                     text-overflow: ellipsis;
                     overflow: hidden;
                     white-space: normal;
                     margin-bottom: 10px;
+                    text-align: center;
                 }
             }
         }

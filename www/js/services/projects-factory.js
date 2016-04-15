@@ -4,6 +4,8 @@ ProjectsFactory.$inject = ['$q', 'utils'];
 
 function ProjectsFactory($q, utils) {
 
+    var serviceUrl = MANI.BACK_END.LocalService + 'assets/projects.json';
+
     var service = {};
     service.projects = [];
     service.getAllProjects = getAllProjects;
@@ -17,10 +19,10 @@ function ProjectsFactory($q, utils) {
         if (service.projects.length > 0) {
             deferred.resolve(service.projects);
         } else {
-            var serviceUrl = MANI.BACK_END.LocalService + 'assets/projects.json';
+            
             var url = "../assets/projects.json";
             //get all the projects from backend here...
-            utils.getLocalData(url).then(function(data) {
+            utils.getLocalData(serviceUrl).then(function(data) {
                 deferred.resolve(data.data.projects);
             }, function(error) {
                 deferred.reject(error);
@@ -33,7 +35,7 @@ function ProjectsFactory($q, utils) {
     function getProjectById(id) {
         var deferred = $q.defer();
 
-        utils.getLocalData('../assets/projects.json').then(function(data) {
+        utils.getLocalData(serviceUrl).then(function(data) {
             service.projects = data.data.projects;
             if (service.projects.length > 0) {
                 var foundProject = {};

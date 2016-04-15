@@ -207,7 +207,7 @@ ion-side-menu {
     justify-content: center;
     margin: 5px; }
     .projects .content .project-list .project {
-      width: 180px;
+      width: 40%;
       height: 180px;
       border: none;
       background: #1b926c;
@@ -236,11 +236,11 @@ ion-side-menu {
         left: 0;
         right: 0;
         padding: 0 10px;
-        font-family: "Montserrat", "sans-serif";
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: normal;
-        margin-bottom: 10px; }
+        margin-bottom: 10px;
+        text-align: center; }
 
 .project-detail .content {
   overflow: auto;
@@ -258,6 +258,7 @@ ion-side-menu {
     .project-detail .content .project-name a {
       display: block;
       color: #18bc9c;
+      text-decoration: none;
       padding: 10px;
       border: 1px solid #676767;
       background: rgba(0, 0, 0, 0.3); }
